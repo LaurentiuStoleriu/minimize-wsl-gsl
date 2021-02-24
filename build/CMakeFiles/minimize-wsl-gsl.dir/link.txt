@@ -1,1 +1,1 @@
-/bin/g++-9  -O3 -DNDEBUG  -rdynamic CMakeFiles/minimize-wsl-gsl.dir/main.cpp.o  -o minimize-wsl-gsl  -Wl,-rpath,/home/lali/gsl-2.6/lib /home/lali/gsl-2.6/lib/libgsl.so /home/lali/gsl-2.6/lib/libgslcblas.so 
+/bin/g++-9  -g  -rdynamic CMakeFiles/minimize-wsl-gsl.dir/main.cpp.o  -o minimize-wsl-gsl  -Wl,-rpath,/home/lali/gsl-2.6/lib /home/lali/gsl-2.6/lib/libgsl.so /home/lali/gsl-2.6/lib/libgslcblas.so 
