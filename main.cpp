@@ -4,6 +4,15 @@
 #include <gsl/gsl_multimin.h>
 #include <random>
 //#include <windows.h>
+#include <sys/time.h>
+
+unsigned int timeGetTime()
+{
+	struct timeval now;
+	gettimeofday(&now, NULL);
+	return now.tv_usec/1000;
+}
+
 
 #define metode_fdf 1
 //#undef metode_fdf
@@ -28,6 +37,7 @@ int main(void)
 {
 	int j;
 	//DWORD starttime, elapsedtime;     //windows
+	unsigned int starttime, elapsedtime;     //windows
 
 	FILE *fp;
 	char numefis[200];
@@ -79,7 +89,7 @@ int main(void)
 	//////////////////////////////////////////////////////////////////////////
 	//echilibru initial
 	//////////////////////////////////////////////////////////////////////////
-	//starttime = timeGetTime();
+	starttime = timeGetTime();
 	do
 	{
 		iter++;
@@ -100,8 +110,8 @@ int main(void)
 		gsl_vector_set(x, i, p[i]);					// si in x pentru ca s->x != x
 	}
 
-	//elapsedtime = timeGetTime() - starttime;
-	//printf("\n echilibru initial - DONE IN %ld milliseconds\n", elapsedtime);
+	elapsedtime = timeGetTime() - starttime;
+	printf("\n echilibru initial - DONE IN %d milliseconds\n", elapsedtime);
 
 	sprintf(numefis, "/home/lali/TITAN-ROG-sync/c/rez/minim_%d.dat", Npart);
 	fp = fopen(numefis, "w");
@@ -131,7 +141,7 @@ int main(void)
 	status = gsl_multimin_fdfminimizer_restart(s);					// !!! neaparat restart!
 	gsl_multimin_fdfminimizer_set(s, &minex_func, x, 0.01, 1.0e-8);
 
-	//starttime = timeGetTime();
+	starttime = timeGetTime();
 	do
 	{
 		iter++;
@@ -150,8 +160,8 @@ int main(void)
 		p[i] = gsl_vector_get(s->x, i);
 	}
 
-	//elapsedtime = timeGetTime() - starttime;
-	//printf("\n comutari - DONE IN %ld milliseconds\n", elapsedtime);
+	elapsedtime = timeGetTime() - starttime;
+	printf("\n comutari - DONE IN %d milliseconds\n", elapsedtime);
 
 	sprintf(numefis, "/home/lali/TITAN-ROG-sync/c/rez/minim_%d_sw.dat", Npart);
 	fp = fopen(numefis, "w");

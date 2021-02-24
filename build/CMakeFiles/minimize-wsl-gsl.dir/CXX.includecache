@@ -17,6 +17,8 @@ gsl/gsl_multimin.h
 -
 random
 -
+sys/time.h
+-
 
 /home/lali/gsl-2.6/include/gsl/gsl_blas_types.h
 gsl/gsl_cblas.h
