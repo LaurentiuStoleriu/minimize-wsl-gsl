@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/lali/TITAN-ROG-sync/c/minimize-wsl-gsl/build",
-  "command": "/bin/g++-9   -I/home/lali/gsl-2.6/include  -g   -o CMakeFiles/minimize-wsl-gsl.dir/main.cpp.o -c /home/lali/TITAN-ROG-sync/c/minimize-wsl-gsl/main.cpp",
+  "command": "/bin/g++-9   -I/home/lali/gsl-2.6/include  -O3 -DNDEBUG   -o CMakeFiles/minimize-wsl-gsl.dir/main.cpp.o -c /home/lali/TITAN-ROG-sync/c/minimize-wsl-gsl/main.cpp",
   "file": "/home/lali/TITAN-ROG-sync/c/minimize-wsl-gsl/main.cpp"
 }
 ]
