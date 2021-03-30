@@ -197,7 +197,7 @@ double fn1(const gsl_vector q[], void *params)
 	{
 		//xi = gsl_vector_get(q, i);
 		xip1 = gsl_vector_get(q, (i + 1));
- 		sv = sv + v(xi);
+		sv = sv + v(xi);
 		delta = (xip1 - xi - r[i] - r[i + 1] - l0);
   		sx = sx + delta * delta;
 		xi = xip1;
